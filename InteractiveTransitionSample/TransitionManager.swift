@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let TransitionThreadhold: CGFloat = 0.5
+private let TransitionThreshold: CGFloat = 0.5
 
 class TransitionManager: UIPercentDrivenInteractiveTransition, UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
     var sourceViewController: UIViewController! {
@@ -35,7 +35,7 @@ class TransitionManager: UIPercentDrivenInteractiveTransition, UIViewControllerA
         case UIGestureRecognizerState.Changed:
             updateInteractiveTransition(percentage)
         default:
-            if percentage > TransitionThreadhold {
+            if percentage > TransitionThreshold {
                 finishInteractiveTransition()
             } else {
                 cancelInteractiveTransition()
